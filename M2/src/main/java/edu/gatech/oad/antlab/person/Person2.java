@@ -31,7 +31,20 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	  //Person 2 put your implementation here
-	  return null;
+		String modifiedString = "";
+		String[] inputStringArray = new String[input.length()];
+		for (int i = 0; i < input.length(); i++) {
+			inputStringArray[i] = Character.toString(input.charAt(i));
+		}
+		for (int i = 0; i < input.length(); i++) {
+			int rand = (int) (Math.random() * input.length());
+			while(inputStringArray[rand] == null) {
+				rand = (int) (Math.random() * input.length());
+			}
+			modifiedString += input.charAt(rand);
+			inputStringArray[rand] = null;
+		}
+		return modifiedString;
 	}
 	/**
 	 * Return a string rep of this object
