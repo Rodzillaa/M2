@@ -5,7 +5,7 @@ package edu.gatech.oad.antlab.person;
  *  returns their name and a
  *  modified string 
  *  
- *  @author Bob
+ *  @author Chhaya Arora
  *  @version 1.1
  */
 public class Person4 {
@@ -13,7 +13,7 @@ public class Person4 {
   private String name;
     /**
      * The constructor, takes in the persons
-     * name
+     * @author Chhaya Arora 
      * @param pname the person's real name
      */
   public Person4(String pname) {
@@ -30,8 +30,18 @@ public class Person4 {
      * @return the modified string
      */
     private String calc(String input) {
-      //Person 4 put your implementation here
-      return null;
+        if (input == null) {
+          throw new IllegalArgumentException("Input is null");
+        }
+          
+          String str = "";
+          for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            str = str + (char)(c + 1);
+                
+
+        }
+        return str;
     }
     
     /**
