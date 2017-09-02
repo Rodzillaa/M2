@@ -3,6 +3,8 @@
 .vscode
 .classpath
 .project
+.idea
+*.class
 bin
 build
 gradle
