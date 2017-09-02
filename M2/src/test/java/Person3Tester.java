@@ -7,17 +7,15 @@ import edu.gatech.oad.antlab.person.Person3;
 
 
 public class Person3Tester {
-    private Person3 a = new Person3("abcd");
-    private Person3 b = new Person3("123456");
+    private Person3 a = new Person3("Waters");
     @Test
     public void toStringTester() {
-        assertEquals("abcd", a.toString("dcba"));
-        assertEquals("123456", b.toString("654321"));
+        assertEquals("Waterscba", a.toString("abc"));
+        assertEquals("Waters123456", a.toString("654321"));
     }
 
-    @Test()
+    @Test(expected = IllegalArgumentException.class)
     public void nullPointerTester() {
         String in = a.toString(null);
-        String out = b.toString(null);
     }
 }
