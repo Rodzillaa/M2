@@ -30,8 +30,13 @@ public class Person5 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 5 put your implementation here
-	  return null;
+        if (input == null) {
+            throw new IllegalArgumentException("input string cannot be null");
+        }
+        if (input.length() < 3) {
+            return input;
+        }
+        return input.substring(2) + input.substring(0, 2);
 	}
 	
 	/**
