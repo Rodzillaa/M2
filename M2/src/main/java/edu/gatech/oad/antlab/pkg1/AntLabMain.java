@@ -1,90 +1,77 @@
 package edu.gatech.oad.antlab.pkg1;
 
-
 import edu.cs2335.antlab.pkg3.*;
 import edu.gatech.oad.antlab.person.*;
 import edu.gatech.oad.antlab.pkg2.*;
 
-
 /**
  * CS2335 Ant Lab
  *
- * Prints out a simple message gathered from all of the other classes
- * in the package structure
+ * <p>Prints out a simple message gathered from all of the other classes in the package structure
  */
- public class AntLabMain {
+public class AntLabMain {
 
-    /**antlab11.java message class*/
-    private AntLab11 ant11;
+  /** antlab11.java message class */
+  private AntLab11 ant11;
 
-    /**antlab12.java message class*/
-    private AntLab12 ant12;
+  /** antlab12.java message class */
+  private AntLab12 ant12;
 
-    /**antlab21.java message class*/
-    private AntLab21 ant21;
+  /** antlab21.java message class */
+  private AntLab21 ant21;
 
-    /**antlab22.java message class*/
-    private AntLab22 ant22;
+  /** antlab22.java message class */
+  private AntLab22 ant22;
 
-    /**antlab31 java message class which is contained in a jar resource file*/
-    private AntLab31 ant31;
+  /** antlab31 java message class which is contained in a jar resource file */
+  private AntLab31 ant31;
 
+  /** the constructor that intializes all the helper classes */
+  public AntLabMain() {
 
+    ant11 = new AntLab11();
+    ant12 = new AntLab12();
+    ant21 = new AntLab21();
+    ant22 = new AntLab22();
+    ant31 = new AntLab31();
+  }
 
-    /**
-     * the constructor that intializes all the helper classes
-     */
-    public AntLabMain () {
+  /** gathers a string from all the other classes and prints the message out to the console */
+  public void printOutMessage() {
 
-        ant11 = new AntLab11();
-        ant12 = new AntLab12();
-        ant21 = new AntLab21();
-        ant22 = new AntLab22();
-        ant31 = new AntLab31();
+    String toPrint =
+        ant11.getMessage()
+            + ant12.getMessage()
+            + ant21.getMessage()
+            + ant22.getMessage()
+            + ant31.getMessage();
+    //Person1 replace P1 with your name
+    //and gburdell1 with your gt id
+    Person1 p1 = new Person1("Anish Visaria");
+    toPrint += p1.toString("avisaria3");
+    //Person2 replace P2 with your name
+    //and gburdell with your gt id
+    Person2 p2 = new Person2("Jamie Lee");
+    toPrint += p2.toString("jlee629");
+    //Person3 replace P3 with your name
+    //and gburdell3 with your gt id
+    Person3 p3 = new Person3("Ravindranadh Bolla");
+    toPrint += p3.toString("rbolla7");
+    //Person4 replace P4 with your name
+    //and gburdell4 with your gt id
+    Person4 p4 = new Person4("Chhaya Arora");
+    toPrint += p4.toString("carora3");
+    //Person5 replace P4 with your name
+    //and gburdell5 with your gt id
+    Person5 p5 = new Person5("Eric");
+    toPrint += p5.toString("ygu65");
 
+    System.out.println(toPrint);
+  }
 
-    }
+  /** entry point for the program */
+  public static void main(String[] args) {
 
-    /**
-     * gathers a string from all the other classes and prints the message
-     * out to the console
-     *
-     */
-    public void printOutMessage() {
-
-        String toPrint =
-            ant11.getMessage() + ant12.getMessage() + ant21.getMessage()
-          + ant22.getMessage() + ant31.getMessage();
-		  //Person1 replace P1 with your name
-		  //and gburdell1 with your gt id
-		  Person1 p1 = new Person1("Anish Visaria");
-		  toPrint += p1.toString("avisaria3");
-		  //Person2 replace P2 with your name
-		  //and gburdell with your gt id
-		  Person2 p2 = new Person2("Jamie Lee");
-		  toPrint += p2.toString("jlee629");
-		  //Person3 replace P3 with your name
-		  //and gburdell3 with your gt id
-		  Person3 p3 = new Person3("Ravindranadh Bolla");
-		  toPrint += p3.toString("rbolla7");
-          //Person4 replace P4 with your name
-          //and gburdell4 with your gt id
-          Person4 p4 = new Person4("Chhaya Arora");
-          toPrint += p4.toString("carora3");
-          //Person5 replace P4 with your name
-          //and gburdell5 with your gt id
-          Person5 p5 = new Person5("Eric");
-          toPrint += p5.toString("ygu65");
-
-        System.out.println(toPrint);
-    }
-    
-    /**
-     * entry point for the program
-     */
-     public static void main(String[] args) {
-
-        new AntLabMain().printOutMessage();
-
-     }
+    new AntLabMain().printOutMessage();
+  }
 }
