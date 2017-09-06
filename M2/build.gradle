@@ -1,18 +1,21 @@
 
-// Apply the java plugin to add support for Java
-apply plugin: 'java'
+plugins {
+	id "java"
+  	id "com.diffplug.gradle.spotless" version "3.5.2"
+}
 
 defaultTasks 'jar'
 
-// In this section you declare where to find the dependencies of your project
 repositories {
 	flatDir { dirs 'lib' }
    	jcenter()
+	maven {
+    	url "https://plugins.gradle.org/m2/"
+    }
 }
 
 dependencies {
-	compile name: 'resources'   
-    // Use JUnit test framework
+	compile name: 'resources'
     testCompile 'junit:junit:4.12'
 }
 
@@ -21,5 +24,11 @@ jar {
 		attributes 'Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain'
 	}
 	from configurations.runtime.collect { zipTree(it) }
+}
+
+spotless {
+	java {
+		googleJavaFormat()
+	}
 }
 
